@@ -1,0 +1,10 @@
+{
+  "name": "bambooslip-workflow-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Newly authored static workflow demos with fictional data; original business source excluded.",
+  "scripts": {
+    "check": "node --check model.js && node --check app.js",
+    "test": "node --test tests/model.test.js tests/scope.test.js"
+  }
+}

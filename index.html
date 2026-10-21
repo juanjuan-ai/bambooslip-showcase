@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BambooSlip: two newly authored, sanitized illustrative demos with fictional engineering and video-production data.">
+  <meta name="color-scheme" content="light">
+  <title>BambooSlip · Workflow showcase</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="model.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workspace</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Showcase navigation">
+      <a class="brand" href="#engineering" aria-label="BambooSlip home"><span class="brand-mark" aria-hidden="true">B</span><span>BambooSlip<small>WORKFLOW SHOWCASE</small></span></a>
+      <p class="nav-label">EXPLORE THE DEMOS</p>
+      <nav>
+        <a class="nav-link active" href="#engineering" data-view="engineering"><span aria-hidden="true">▦</span><span>Engineering operations<small>工程业务管理</small></span><span class="nav-number">01</span></a>
+        <a class="nav-link" href="#video" data-view="video"><span aria-hidden="true">▷</span><span>Video production<small>视频制作工作台</small></span><span class="nav-number">02</span></a>
+        <a class="nav-link" href="#about" data-view="about"><span aria-hidden="true">◎</span><span>About this showcase<small>演示说明</small></span></a>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Fictional data only<p>A fresh, illustrative reconstruction.<br>No original business source included.</p><span class="sidebar-pill">STATIC · LOCAL · RESETTABLE</span></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div class="breadcrumb">Showcase <span>/</span> <strong id="breadcrumb-current">Engineering operations</strong></div><button type="button" class="button button-quiet reset-button" id="reset-demo"><span aria-hidden="true">↺</span> Reset demo</button></header>
+      <div class="disclosure"><span class="disclosure-dot" aria-hidden="true"></span><p><strong>Illustrative demo.</strong> All projects, amounts and files are fictional. Changes stay in this page and reset on reload.</p><a href="#about">Read the scope <span aria-hidden="true">↗</span></a></div>
+      <main id="main" tabindex="-1">
+        <section id="engineering-view" class="view" aria-labelledby="engineering-title">
+          <div class="page-heading"><div><p class="eyebrow">01 / ENGINEERING OPERATIONS DEMO</p><h1 id="engineering-title">Every project, in perspective.</h1><p class="lead">A clear view of contracts, project status and the next approval.</p></div><span class="snapshot"><span class="status-dot"></span> Fictional snapshot · Oct 2026</span></div>
+          <div class="metrics" id="engineering-metrics" aria-label="Engineering summary"></div>
+          <div class="overview-grid">
+            <section class="panel chart-panel" aria-labelledby="pipeline-title"><div class="panel-heading"><div><p class="eyebrow">PORTFOLIO HEALTH</p><h2 id="pipeline-title">Work moving forward</h2></div><span class="subtle-label">Illustrative progress</span></div><div id="project-progress" class="progress-chart"></div><div class="chart-legend"><span><i class="legend-square"></i> Recorded progress</span><span>All values are synthetic</span></div></section>
+            <section class="panel summary-panel" aria-labelledby="queue-title"><div class="panel-heading"><div><p class="eyebrow">NEXT IN LINE</p><h2 id="queue-title">Approval queue</h2></div><span class="round-icon" aria-hidden="true">↗</span></div><div id="approval-queue"></div><p class="panel-footnote">Select a contract below to inspect its timeline and simulate an approval.</p></section>
+          </div>
+          <div class="section-heading"><div><h2>Projects & contracts</h2><p>Search the sample portfolio or open a contract to explore its workflow.</p></div><span class="count-label" id="engineering-count"></span></div>
+          <div class="engineering-grid">
+            <section class="panel project-panel" aria-label="Project contract list">
+              <div class="filter-row"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Search engineering projects or contracts</span><input id="engineering-search" type="search" placeholder="Search projects or contract IDs…" autocomplete="off"></label><label><span class="sr-only">Filter project status</span><select id="engineering-filter"><option value="all">All statuses</option><option value="On track">On track</option><option value="Needs review">Needs review</option><option value="Settled">Settled</option></select></label></div>
+              <div class="table-scroll"><table><thead><tr><th scope="col">Project / contract</th><th scope="col">Status</th><th scope="col" class="amount-cell">Value (demo CNY)</th><th scope="col"><span class="sr-only">Open details</span></th></tr></thead><tbody id="engineering-rows"></tbody></table></div><div class="empty-state" id="engineering-empty" hidden>No matching projects. Try another keyword or status.</div>
+            </section>
+            <section class="panel detail-panel" id="contract-details" aria-label="Selected contract details" aria-live="polite"></section>
+          </div>
+        </section>
+        <section id="video-view" class="view" aria-labelledby="video-title" hidden>
+          <div class="page-heading"><div><p class="eyebrow">02 / VIDEO PRODUCTION WORKSPACE DEMO</p><h1 id="video-title">From first idea to final frame.</h1><p class="lead">Follow project stages, complete tasks and keep the right version in view.</p></div><span class="snapshot"><span class="status-dot"></span> Synthetic file inventory</span></div>
+          <div class="metrics" id="video-metrics" aria-label="Production summary"></div>
+          <div class="production-toolbar"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Search video projects</span><input id="video-search" type="search" placeholder="Find a production…" autocomplete="off"></label><div class="stage-tabs" id="stage-filters" role="group" aria-label="Filter production stage"></div></div>
+          <div class="video-layout"><div><div class="section-heading compact"><h2>Production board</h2><span class="count-label" id="video-count"></span></div><div class="production-grid" id="video-projects"></div><div class="empty-state panel" id="video-empty" hidden>No matching productions. Try another keyword or stage.</div></div><section class="panel video-detail" id="video-details" aria-label="Selected production details"></section></div>
+        </section>
+        <section id="about-view" class="view" aria-labelledby="about-title" hidden>
+          <div class="page-heading"><div><p class="eyebrow">BEHIND THE SHOWCASE</p><h1 id="about-title">Real workflow ideas. Fictional content.</h1><p class="lead">A transparent boundary between the feature story and this public-facing demo.</p></div></div>
+          <section class="panel about-intro"><span class="about-badge">B</span><div><h2>Two workflows, rebuilt for demonstration.</h2><p>This showcase is a sanitized, illustrative reconstruction based on project features. Its HTML, CSS and JavaScript were newly authored. The original business source, business records, personal details, credentials and media assets are excluded.</p><p lang="zh-CN">本展示依据项目功能重新编写，以虚构数据呈现工程业务与视频制作流程。它不是生产系统，不包含原始业务源码、真实业务记录、个人信息、凭据或媒体素材。</p></div></section>
+          <div class="about-grid"><section class="panel about-card"><p class="eyebrow">01 / ENGINEERING</p><h2>Engineering Operations Demo</h2><p>Explore portfolio metrics, project search, contract details, a simulated approval and its timeline.</p><h3>Source-project technology context</h3><p>Vue 3, Element Plus, Pinia, Vue Router, Axios, ECharts; Node.js / Express; MySQL 8 with SQLite compatibility; JWT and bcrypt.</p><p class="callout">These technologies describe the source project's context. This newly authored static demo does not implement that stack, authentication or database behavior.</p></section><section class="panel about-card"><p class="eyebrow">02 / VIDEO</p><h2>Video Production Workspace Demo</h2><p>Explore five production stages, search and filters, task progress, synthetic file versions and a pinned current deliverable.</p><h3>Source-project technology context</h3><p>Vanilla HTML, CSS, JavaScript and IndexedDB.</p><p class="callout">This newly authored static demo uses HTML, CSS and JavaScript with memory-only state. It does not use IndexedDB, real files or folder permissions.</p></section></div>
+          <section class="panel scope-panel"><h2>What this demo does and doesn’t do</h2><div class="scope-columns"><div><h3>Try it safely</h3><ul><li>Search and filter fictional projects</li><li>Simulate a contract approval</li><li>Toggle sample tasks and production stages</li><li>Pin a synthetic file version as the current deliverable</li><li>Reset everything to the original demo snapshot</li></ul></div><div><h3>Deliberate boundaries</h3><ul><li>No backend, authentication or real approvals</li><li>No upload, file picker or folder access</li><li>No analytics, third-party dependencies or app data requests</li><li>No persistence, production guarantees or client-delivery claims</li><li>No license grant is included</li></ul></div></div></section>
+        </section>
+      </main>
+      <footer class="footer"><span>BambooSlip · Workflow showcase</span><span>Newly authored reconstruction · Fictional data · Not a production implementation</span></footer>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">JavaScript is required for the interactive demos. Read README.md for scope and project information.</p></noscript>
+</body>
+</html>
